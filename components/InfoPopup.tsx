@@ -54,10 +54,18 @@ export function InfoPopup() {
         </div>
       ) : (
         <div
-          className="bg-white rounded-lg shadow-lg border border-neutral-200 px-4 py-6 cursor-pointer hover:shadow-xl transition-all duration-200"
+          className="info-popup-collapsed bg-white rounded-lg px-4 py-4 cursor-pointer hover:scale-105 transition-transform duration-200"
           onClick={() => setIsExpanded(true)}
         >
-          <p className="text-neutral-600 text-sm">Persönliche Notiz von Max</p>
+          <div className="flex items-center gap-2">
+            <span
+              className="text-lg"
+              style={{ animation: 'bounce-envelope 1s ease-in-out infinite' }}
+            >
+              ✉️
+            </span>
+            <p className="text-neutral-700 text-sm font-medium">Persönliche Notiz von Max</p>
+          </div>
         </div>
       )}
     </div>
