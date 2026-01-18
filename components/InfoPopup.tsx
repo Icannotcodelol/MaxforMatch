@@ -23,11 +23,35 @@ export function InfoPopup() {
   }, [isExpanded]);
 
   return (
-    <div className="fixed bottom-6 right-6 z-50" ref={popupRef}>
-      {isExpanded ? (
-        <div
-          className="bg-white rounded-xl shadow-xl border border-neutral-200 p-5 w-[33vw] min-w-[300px] max-w-[500px] max-h-[80vh] overflow-y-auto transition-all duration-200"
-        >
+    <>
+      {/* Collapsed button - bottom right */}
+      {!isExpanded && (
+        <div className="fixed bottom-6 right-6 z-50">
+          <div
+            className="info-popup-collapsed bg-white rounded-lg px-4 py-4 cursor-pointer hover:scale-110 transition-transform duration-200"
+            onClick={() => setIsExpanded(true)}
+          >
+            <div className="flex items-center gap-2">
+              <span
+                className="text-lg"
+                style={{ animation: 'bounce-envelope 1s ease-in-out infinite' }}
+              >
+                ✉️
+              </span>
+              <p className="text-neutral-700 text-sm font-medium">Persönliche Notiz von Max</p>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Expanded modal - centered */}
+      {isExpanded && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/20" onClick={() => setIsExpanded(false)}>
+          <div
+            ref={popupRef}
+            className="bg-white rounded-xl shadow-xl border border-neutral-200 p-6 w-[90vw] md:w-[50vw] max-w-[600px] max-h-[80vh] overflow-y-auto"
+            onClick={(e) => e.stopPropagation()}
+          >
           <div className="space-y-4 text-sm text-neutral-700 leading-relaxed">
             <p>
               Zunächst möchte ich mich herzlich dafür bedanken, dass ihr euch die Zeit nehmt, meine Bewerbung zu lesen und diese Seite zu öffnen.
@@ -52,22 +76,8 @@ export function InfoPopup() {
             </p>
           </div>
         </div>
-      ) : (
-        <div
-          className="info-popup-collapsed bg-white rounded-lg px-4 py-4 cursor-pointer hover:scale-110 transition-transform duration-200"
-          onClick={() => setIsExpanded(true)}
-        >
-          <div className="flex items-center gap-2">
-            <span
-              className="text-lg"
-              style={{ animation: 'bounce-envelope 1s ease-in-out infinite' }}
-            >
-              ✉️
-            </span>
-            <p className="text-neutral-700 text-sm font-medium">Persönliche Notiz von Max</p>
-          </div>
         </div>
       )}
-    </div>
+    </>
   );
 }
