@@ -2,9 +2,9 @@
   "lastUpdated": "2026-01-18T18:47:23.380Z",
   "totalCompanies": 277,
   "stats": {
-    "green": 47,
-    "unclear": 43,
-    "red": 187
+    "green": 49,
+    "unclear": 32,
+    "red": 196
   },
   "startups": [
     {
@@ -2234,11 +2234,19 @@
       "businessPurpose": "Die Ver- und Bearbeitung von Metallen sowie die Herstellung, Montage und der Handel mit Metallprodukten und artverwandten Erzeugnissen.",
       "registerType": "HRB",
       "registerNumber": "18083",
-      "triage": "unclear",
+      "triage": "red",
       "flags": [
         {
-          "type": "yellow",
-          "text": "LLM-Analyse fehlgeschlagen"
+          "type": "red",
+          "text": "Fokus auf Lohnfertigung und Metallbearbeitung statt eigenem Deep-Tech Produkt"
+        },
+        {
+          "type": "red",
+          "text": "Enthält Handel und Montage von Metallprodukten (Dienstleistung/Handwerk)"
+        },
+        {
+          "type": "red",
+          "text": "Keine Anzeichen für technische Innovation oder Deep-Tech Software"
         }
       ],
       "source": "handelsregister",
@@ -2255,11 +2263,19 @@
       "businessPurpose": "Die mechanische Bearbeitung von Metallen und anderen Werkstoffen mittels CNC-Zerspanungstechnik, insbesondere das Fräsen, Drehen, Bohren und Schleifen von Werkstücken für verschiedene industrielle Anwendungen sowie die Fertigung von Präzisionsteilen nach Kundenanforderungen; die Entwicklung, Konstruktion und Optimierung von Bauteilen sowie die Durchführung von Montage- und Nachbearbeitungsarbeiten. der Handel mit verwandten Technologien, die Beschaffung und Veräußerung von Maschinen und Werkzeugen sowie Schulungen und Beratungen im Bereich CNC-Zerspanung.",
       "registerType": "HRB",
       "registerNumber": "41384",
-      "triage": "unclear",
+      "triage": "red",
       "flags": [
         {
-          "type": "yellow",
-          "text": "LLM-Analyse fehlgeschlagen"
+          "type": "red",
+          "text": "Fokus auf Dienstleistungen: Mechanische Bearbeitung und Fertigung nach Kundenanforderungen (Lohnfertigung)"
+        },
+        {
+          "type": "red",
+          "text": "Enthält Schulungen, Beratungen und Handel mit Maschinen"
+        },
+        {
+          "type": "red",
+          "text": "Kein eigenes Hardware-Produkt oder Deep-Tech-Innovation erkennbar"
         }
       ],
       "source": "handelsregister",
@@ -2276,11 +2292,19 @@
       "businessPurpose": "Bereitstellung industrieller Lösungen mit Schwerpunkt auf der Entwicklung, dem Design und dem Prototypenbau von elektronischen und mechanischen Systemen. Dies umfasst CAD-Design, Erstellung maßgeschneiderter Hardwareund mechanischer Komponenten, Integration moderner Technologien wie IoT und Automatisierung sowie die Lieferung hochpräziser Prototypen für Branchen wie Automobil, Fertigung und Unterhaltungselektronik.",
       "registerType": "HRB",
       "registerNumber": "300081",
-      "triage": "unclear",
+      "triage": "red",
       "flags": [
         {
-          "type": "yellow",
-          "text": "LLM-Analyse fehlgeschlagen"
+          "type": "red",
+          "text": "Fokus auf Dienstleistungen (Design, Prototypenbau, Erstellung maßgeschneiderter Komponenten)"
+        },
+        {
+          "type": "red",
+          "text": "Kein eigenes skalierbares Hardware-Produkt erkennbar (Auftragsfertigung/Engineering Service)"
+        },
+        {
+          "type": "red",
+          "text": "Enthält Integration und Lieferung als Service-Komponente für Dritte"
         }
       ],
       "source": "handelsregister",
@@ -2297,11 +2321,19 @@
       "businessPurpose": "Entwicklung, Vertrieb und Betrieb von Infrastruktur in der Energieversorgung.",
       "registerType": "HRB",
       "registerNumber": "306544",
-      "triage": "unclear",
+      "triage": "red",
       "flags": [
         {
-          "type": "yellow",
-          "text": "LLM-Analyse fehlgeschlagen"
+          "type": "red",
+          "text": "Fokus auf Betrieb von Infrastruktur (Asset-Management statt Tech-Entwicklung)"
+        },
+        {
+          "type": "red",
+          "text": "Gegenstand umfasst reinen Vertrieb ohne explizite eigene F&E-Tiefe"
+        },
+        {
+          "type": "red",
+          "text": "Entspricht laut Entscheidungsregel 6 einem Infrastruktur-Betreiber"
         }
       ],
       "source": "handelsregister",
@@ -2318,11 +2350,11 @@
       "businessPurpose": "Die Entwicklung, Herstellung, Handel und Vertrieb von Baustoffen mit Photovoltaik bzw. Solareigenschaften und von Komponenten für Solarversorgung, sowie das Halten und Vergeben von Lizenzen über das von der Gesellschaft entwickelte Know-How.",
       "registerType": "HRB",
       "registerNumber": "195767",
-      "triage": "unclear",
+      "triage": "green",
       "flags": [
         {
-          "type": "yellow",
-          "text": "LLM-Analyse fehlgeschlagen"
+          "type": "green",
+          "text": "Entwicklung und Herstellung von Baustoffen mit Photovoltaik-Eigenschaften"
         }
       ],
       "source": "handelsregister",
@@ -2339,11 +2371,11 @@
       "businessPurpose": "Der Bau und Betrieb einer Freiflächenphotovoltaikanlage.",
       "registerType": "HRB",
       "registerNumber": "22670",
-      "triage": "unclear",
+      "triage": "red",
       "flags": [
         {
-          "type": "yellow",
-          "text": "LLM-Analyse fehlgeschlagen"
+          "type": "red",
+          "text": "Bau und Betrieb von Solarparks (keine Produktentwicklung)"
         }
       ],
       "source": "handelsregister",
@@ -2360,11 +2392,19 @@
       "businessPurpose": "Die Herstellung, der Import und Verkauf von Wärmepumpen, Dienstleistungen und technischer Service im Bereich von Wärmeu. Klimatechnik.",
       "registerType": "HRB",
       "registerNumber": "221289",
-      "triage": "unclear",
+      "triage": "red",
       "flags": [
         {
-          "type": "yellow",
-          "text": "LLM-Analyse fehlgeschlagen"
+          "type": "red",
+          "text": "Fokus auf Import und Verkauf statt eigener Entwicklung/Produktion"
+        },
+        {
+          "type": "red",
+          "text": "Enthält Dienstleistungen und technischen Service (Handwerk/Wartung)"
+        },
+        {
+          "type": "red",
+          "text": "Energie-Installation und Handel ohne Deep-Tech-Innovation"
         }
       ],
       "source": "handelsregister",
@@ -2381,11 +2421,11 @@
       "businessPurpose": "die Entwicklung KI-gesteuerter Lösungen zur Optimierung von Arbeitsabläufen, zur Steigerung der Produktivität und zur Erschließung neuer Möglichkeiten in verschiedenen Branchen. Softwareentwicklung im Bereich intelligenter Chatbots, Wissensdatenbankassistenten und spezialisierte KI-Assistenten, wie virtuelle Lehrassistenten oder die Unterstützung bei der Erstellung von Inhalten für eine optimierte Dokumentenzusammenfassung. Software- und Dienstleistungen für die Übersetzung und Systemverwaltung. Erstellung und Angebot von Tools für die Dokumentenverarbeitung, einschließlich Zusammenführung, Formatierung sowie sichere Bildbearbeitung innerhalb einer einheitlichen, datenschutzfreundlichen Plattform. Softwareleistungen im Bereich Webanwendungsentwicklung, Datenbankmanagement, datengetriebene Entscheidungsfindung, Analytik, KI-Entwicklung, Cloud-Lösungen, API-Entwicklungen und Integration und DEV OPS-Dienstleistung.",
       "registerType": "HRB",
       "registerNumber": "46342",
-      "triage": "unclear",
+      "triage": "red",
       "flags": [
         {
-          "type": "yellow",
-          "text": "LLM-Analyse fehlgeschlagen"
+          "type": "red",
+          "text": "Generische KI/Chatbot-Software, keine technische Tiefe"
         }
       ],
       "source": "handelsregister",
@@ -2402,11 +2442,11 @@
       "businessPurpose": "Entwicklung, Erforschung und Anwendung von Künstlicher Intelligenz (KI) - insbesondere, aber nicht abschließend - im Medien-/Entertainment-Bereich -, einschließlich, aber nicht beschränkt auf: die Entwicklung von KI-gestützten Content-Generierungs- und Produktionssystemen für Film, Musik, Gaming und interaktive Medien; die Entwicklung von virtuellen Charakteren, digitalen Influencern und immersiven Erlebniswelten; die Analyse und Auswertung von Nutzerinteraktionen zur Personalisierung von Medieninhalten; die Erstellung und Lizenzierung von KI-generierten Inhalten; die Bereitstellung von KI-basierten Tools für Künstler, Produzenten und Kreative; die Entwicklung und Vermarktung von KI-basierten Entertainment-Apps und Plattformen sowie alle damit im Zusammenhang stehenden Tätigkeiten.",
       "registerType": "HRB",
       "registerNumber": "279982",
-      "triage": "unclear",
+      "triage": "red",
       "flags": [
         {
-          "type": "yellow",
-          "text": "LLM-Analyse fehlgeschlagen"
+          "type": "red",
+          "text": "KI für Medien/Entertainment, keine industrielle Anwendung"
         }
       ],
       "source": "handelsregister",
@@ -2426,8 +2466,16 @@
       "triage": "unclear",
       "flags": [
         {
-          "type": "yellow",
-          "text": "LLM-Analyse fehlgeschlagen"
+          "type": "red",
+          "text": "Vager Gegenstand ohne Branchenspezifik (z.B. Automotive, Fertigung)"
+        },
+        {
+          "type": "red",
+          "text": "Fokus auf Automatisierung von Geschäftsprozessen deutet auf generische SaaS hin"
+        },
+        {
+          "type": "green",
+          "text": "Technischer Fokus auf agentengesteuerte KI-Methoden"
         }
       ],
       "source": "handelsregister",
@@ -2444,11 +2492,11 @@
       "businessPurpose": "Entwicklung, Betrieb, Vermarktung und Vertrieb digitaler Produkte und Dienstleistungen, insbesondere Softwareanwendungen, die auf Technologien der künstlichen Intelligenz basieren, einschließlich, aber nicht beschränkt auf Large Language-Models (LLMs). Entwicklung herkömmlicher Softwareanwendungen und Online-Dienste für Endnutzer und Unternehmen, einschließlich mobiler und webbasierter Anwendungen, cloudbasierter Plattformen, Automatisierungstools sowie damit verbundener digitaler Dienstleistungen. Forschung und Entwicklung in den Bereichen künstliche Intelligenz, maschinelles Lernen und Softwaretechnik.",
       "registerType": "HRB",
       "registerNumber": "274554",
-      "triage": "unclear",
+      "triage": "red",
       "flags": [
         {
-          "type": "yellow",
-          "text": "LLM-Analyse fehlgeschlagen"
+          "type": "red",
+          "text": "LLM-basierte Software, keine technische Tiefe"
         }
       ],
       "source": "handelsregister",
@@ -2494,11 +2542,15 @@
       "businessPurpose": "a) Entwicklung, Fertigung, Bau und Testen von Prototypen für Raumfahrttechnologien, insbesondere Trägerraketen und Antriebssysteme, einschließlich der Errichtung und Nutzung entsprechender Testeinrichtungen sowie der Beschaffung notwendiger Materialien, Komponenten und Werkzeuge; b) Organisation und Durchführung von sowie Teilnahme an Fachveranstaltungen, Workshops, Konferenzen, Tagungen, und öffentlichen Veranstaltungen zu den genannten Themenbereichen für Fachkräfte, Studierende sowie für Personen mit Interesse an Raumfahrttechnologien; c) Veröffentlichung wissenschaftlicher Arbeiten, Berichte oder Studien im Bereich der Raketentechnik und Raumfahrtforschung; d) Vorstellung von wissenschaftlichen Arbeiten in digitaler Form (Websites), auf Konferenzen sowie bei Industriepartnern und Forschungseinrichtungen; e) Förderung und Pflege des wissenschaftlichen und fachlichen Austauschs zwischen Studierenden, Hochschulen, Forschungseinrichtungen sowie der Industrie mit besonderem Fokus auf Raumfahrttechnologien; f) Presse- und Öffentlichkeitsarbeit zur Förderung des gesellschaftlichen Interesses an Raketentechnik, Raumfahrtforschung und technologischer Innovation.",
       "registerType": "HRB",
       "registerNumber": "301580",
-      "triage": "unclear",
+      "triage": "green",
       "flags": [
         {
-          "type": "yellow",
-          "text": "LLM-Analyse fehlgeschlagen"
+          "type": "green",
+          "text": "Entwicklung und Fertigung von Trägerraketen und Antriebssystemen"
+        },
+        {
+          "type": "green",
+          "text": "Raumfahrt-Hardware mit Testeinrichtungen"
         }
       ],
       "source": "handelsregister",
