@@ -2,8 +2,18 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Max for Mätch - Deep-Tech Startup Entdeckung",
-  description: "Entdecke frühe Deep-Tech Startups in der DACH-Region",
+  title: "Max for Mätch",
+  description: "Hier sind 277 Gründe Max als Praktikant einzustellen",
+  openGraph: {
+    title: "Max for Mätch",
+    description: "Hier sind 277 Gründe Max als Praktikant einzustellen",
+    type: "website",
+  },
+  twitter: {
+    card: "summary",
+    title: "Max for Mätch",
+    description: "Hier sind 277 Gründe Max als Praktikant einzustellen",
+  },
 };
 
 export default function RootLayout({
