@@ -30,6 +30,13 @@ export default function RootLayout({
           href="https://fonts.fontdue.com/laborandwait/css/Rm9udENvbGxlY3Rpb246MTQ4MzU5ODAxNjAzMTMwOTA1OA%3D%3D.css"
           rel="stylesheet"
         />
+        {/* DataFast Analytics */}
+        <script
+          defer
+          data-website-id="dfid_BejSBVNeGOZVYgqszq05X"
+          data-domain="maxfor-match.vercel.app"
+          src="https://datafa.st/js/script.js"
+        />
       </head>
       <body>{children}</body>
     </html>
