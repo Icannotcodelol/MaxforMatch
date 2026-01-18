@@ -1,0 +1,373 @@
+{
+  "description": "Manually curated list of verified university spin-offs and EXIST-funded startups in DACH region",
+  "lastUpdated": "2025-01-18",
+  "sources": [
+    "TUM Entrepreneurship",
+    "KIT Gründerschmiede",
+    "RWTH Aachen Innovation",
+    "EXIST Erfolgsgeschichten",
+    "High-Tech Gründerfonds Portfolio"
+  ],
+  "spinoffs": [
+    {
+      "name": "Celonis",
+      "university": "TUM",
+      "city": "München",
+      "founded": 2011,
+      "sector": "Enterprise Software",
+      "existFunded": false,
+      "notes": "Process Mining, Unicorn"
+    },
+    {
+      "name": "Isar Aerospace",
+      "university": "TUM",
+      "city": "Ottobrunn",
+      "founded": 2018,
+      "sector": "Aerospace",
+      "existFunded": true,
+      "notes": "Raketenantriebe"
+    },
+    {
+      "name": "Lilium",
+      "university": "TUM",
+      "city": "Weßling",
+      "founded": 2015,
+      "sector": "Mobility",
+      "existFunded": false,
+      "notes": "eVTOL Flugtaxi"
+    },
+    {
+      "name": "Konux",
+      "university": "TUM",
+      "city": "München",
+      "founded": 2014,
+      "sector": "Industrial Deep-Tech",
+      "existFunded": true,
+      "notes": "IoT Sensoren für Bahn"
+    },
+    {
+      "name": "NavVis",
+      "university": "TUM",
+      "city": "München",
+      "founded": 2013,
+      "sector": "Hardware",
+      "existFunded": true,
+      "notes": "Indoor-Mapping"
+    },
+    {
+      "name": "Quantum Systems",
+      "university": "TUM",
+      "city": "Gilching",
+      "founded": 2015,
+      "sector": "Robotics",
+      "existFunded": false,
+      "notes": "Industriedrohnen"
+    },
+    {
+      "name": "Ororatech",
+      "university": "TUM",
+      "city": "München",
+      "founded": 2018,
+      "sector": "Aerospace",
+      "existFunded": true,
+      "notes": "Waldbrand-Erkennung per Satellit"
+    },
+    {
+      "name": "Tanso",
+      "university": "TUM",
+      "city": "München",
+      "founded": 2020,
+      "sector": "Cleantech",
+      "existFunded": true,
+      "notes": "CO2-Bilanzierung"
+    },
+    {
+      "name": "DeepL",
+      "university": "RWTH Aachen",
+      "city": "Köln",
+      "founded": 2017,
+      "sector": "AI/ML",
+      "existFunded": false,
+      "notes": "KI-Übersetzung"
+    },
+    {
+      "name": "Cybus",
+      "university": "RWTH Aachen",
+      "city": "Hamburg",
+      "founded": 2015,
+      "sector": "Industrial Deep-Tech",
+      "existFunded": true,
+      "notes": "Industrial IoT Middleware"
+    },
+    {
+      "name": "Streetscooter",
+      "university": "RWTH Aachen",
+      "city": "Aachen",
+      "founded": 2010,
+      "sector": "Mobility",
+      "existFunded": false,
+      "notes": "E-Transporter (acquired by DHL)"
+    },
+    {
+      "name": "E.GO Mobile",
+      "university": "RWTH Aachen",
+      "city": "Aachen",
+      "founded": 2015,
+      "sector": "Mobility",
+      "existFunded": false,
+      "notes": "E-Fahrzeuge"
+    },
+    {
+      "name": "Gropyus",
+      "university": "RWTH Aachen",
+      "city": "Wien",
+      "founded": 2019,
+      "sector": "Cleantech",
+      "existFunded": false,
+      "notes": "Modulares Bauen"
+    },
+    {
+      "name": "Volocopter",
+      "university": "KIT",
+      "city": "Bruchsal",
+      "founded": 2011,
+      "sector": "Mobility",
+      "existFunded": false,
+      "notes": "Flugtaxi"
+    },
+    {
+      "name": "Ineratec",
+      "university": "KIT",
+      "city": "Karlsruhe",
+      "founded": 2016,
+      "sector": "Cleantech",
+      "existFunded": true,
+      "notes": "Power-to-Liquid"
+    },
+    {
+      "name": "Nanoscribe",
+      "university": "KIT",
+      "city": "Eggenstein-Leopoldshafen",
+      "founded": 2007,
+      "sector": "Hardware",
+      "existFunded": true,
+      "notes": "3D-Mikrodruck"
+    },
+    {
+      "name": "Synbiotic",
+      "university": "TUM",
+      "city": "München",
+      "founded": 2017,
+      "sector": "Biotech",
+      "existFunded": false,
+      "notes": "Synthetische Cannabinoide"
+    },
+    {
+      "name": "Electrochaea",
+      "university": "TUM",
+      "city": "Planegg",
+      "founded": 2014,
+      "sector": "Cleantech",
+      "existFunded": false,
+      "notes": "Power-to-Gas Biokatalyse"
+    },
+    {
+      "name": "Blickfeld",
+      "university": "TUM",
+      "city": "München",
+      "founded": 2017,
+      "sector": "Hardware",
+      "existFunded": true,
+      "notes": "LiDAR-Sensoren"
+    },
+    {
+      "name": "Twaice",
+      "university": "TUM",
+      "city": "München",
+      "founded": 2018,
+      "sector": "Energy",
+      "existFunded": true,
+      "notes": "Batterie-Analytik"
+    },
+    {
+      "name": "Helmut Fischer",
+      "university": "TUM",
+      "city": "München",
+      "founded": 2020,
+      "sector": "Medtech",
+      "existFunded": true,
+      "notes": "Chirurgische Robotik"
+    },
+    {
+      "name": "Personio",
+      "university": "TUM",
+      "city": "München",
+      "founded": 2015,
+      "sector": "Enterprise Software",
+      "existFunded": false,
+      "notes": "HR Software, Unicorn"
+    },
+    {
+      "name": "Inveox",
+      "university": "TUM",
+      "city": "München",
+      "founded": 2017,
+      "sector": "Medtech",
+      "existFunded": true,
+      "notes": "Labor-Automatisierung"
+    },
+    {
+      "name": "Sono Motors",
+      "university": "TUM",
+      "city": "München",
+      "founded": 2016,
+      "sector": "Mobility",
+      "existFunded": false,
+      "notes": "Solarauto"
+    },
+    {
+      "name": "Siemens Healthineers (Teil-Spin-off)",
+      "university": "FAU Erlangen",
+      "city": "Erlangen",
+      "founded": 2018,
+      "sector": "Medtech",
+      "existFunded": false,
+      "notes": "Medizintechnik"
+    },
+    {
+      "name": "Covestro",
+      "university": "RWTH Aachen",
+      "city": "Leverkusen",
+      "founded": 2015,
+      "sector": "Industrial Deep-Tech",
+      "existFunded": false,
+      "notes": "Hochleistungskunststoffe"
+    },
+    {
+      "name": "HeidelbergCement Innovation",
+      "university": "KIT",
+      "city": "Heidelberg",
+      "founded": 2019,
+      "sector": "Cleantech",
+      "existFunded": false,
+      "notes": "CO2-armer Zement"
+    },
+    {
+      "name": "Blacklane",
+      "university": "TU Berlin",
+      "city": "Berlin",
+      "founded": 2011,
+      "sector": "Mobility",
+      "existFunded": false,
+      "notes": "Chauffeur-Service"
+    },
+    {
+      "name": "Scoutbee",
+      "university": "Uni Würzburg",
+      "city": "Würzburg",
+      "founded": 2015,
+      "sector": "Enterprise Software",
+      "existFunded": true,
+      "notes": "KI-Lieferanten-Scouting"
+    },
+    {
+      "name": "Agile Robots",
+      "university": "DLR/TUM",
+      "city": "München",
+      "founded": 2018,
+      "sector": "Robotics",
+      "existFunded": false,
+      "notes": "Intelligente Robotik"
+    },
+    {
+      "name": "Franka Emika",
+      "university": "TUM/DLR",
+      "city": "München",
+      "founded": 2016,
+      "sector": "Robotics",
+      "existFunded": false,
+      "notes": "Kollaborative Roboter"
+    },
+    {
+      "name": "Magazino",
+      "university": "TUM",
+      "city": "München",
+      "founded": 2014,
+      "sector": "Robotics",
+      "existFunded": true,
+      "notes": "Logistik-Roboter"
+    },
+    {
+      "name": "Mynaric",
+      "university": "DLR",
+      "city": "Gilching",
+      "founded": 2009,
+      "sector": "Aerospace",
+      "existFunded": false,
+      "notes": "Laser-Kommunikation"
+    },
+    {
+      "name": "Climeworks",
+      "university": "ETH Zürich",
+      "city": "Zürich",
+      "founded": 2009,
+      "sector": "Cleantech",
+      "existFunded": false,
+      "notes": "Direct Air Capture"
+    },
+    {
+      "name": "Scandit",
+      "university": "ETH Zürich",
+      "city": "Zürich",
+      "founded": 2009,
+      "sector": "Enterprise Software",
+      "existFunded": false,
+      "notes": "Barcode Scanning"
+    },
+    {
+      "name": "GetYourGuide",
+      "university": "ETH Zürich",
+      "city": "Berlin",
+      "founded": 2009,
+      "sector": "Enterprise Software",
+      "existFunded": false,
+      "notes": "Reise-Plattform"
+    },
+    {
+      "name": "Beekeeper",
+      "university": "ETH Zürich",
+      "city": "Zürich",
+      "founded": 2012,
+      "sector": "Enterprise Software",
+      "existFunded": false,
+      "notes": "Frontline-Kommunikation"
+    },
+    {
+      "name": "Wingcopter",
+      "university": "TU Darmstadt",
+      "city": "Weiterstadt",
+      "founded": 2017,
+      "sector": "Robotics",
+      "existFunded": true,
+      "notes": "Lieferdrohnen"
+    },
+    {
+      "name": "1Komma5",
+      "university": "Uni Hamburg",
+      "city": "Hamburg",
+      "founded": 2021,
+      "sector": "Cleantech",
+      "existFunded": false,
+      "notes": "Dezentrale Energie"
+    },
+    {
+      "name": "Enpal",
+      "university": "TU Berlin",
+      "city": "Berlin",
+      "founded": 2017,
+      "sector": "Energy",
+      "existFunded": false,
+      "notes": "Solar-Leasing, Unicorn"
+    }
+  ]
+}
