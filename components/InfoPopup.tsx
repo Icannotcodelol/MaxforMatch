@@ -54,7 +54,7 @@ export function InfoPopup() {
         </div>
       ) : (
         <div
-          className="info-popup-collapsed bg-white rounded-lg px-4 py-4 cursor-pointer"
+          className="info-popup-collapsed bg-white rounded-lg px-4 py-4 cursor-pointer hover:scale-110 transition-transform duration-200"
           onClick={() => setIsExpanded(true)}
         >
           <div className="flex items-center gap-2">
