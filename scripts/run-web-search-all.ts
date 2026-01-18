@@ -6,8 +6,6 @@ dotenv.config({ path: ".env.local" });
 
 const OPENROUTER_API_KEY = process.env.OPENROUTER_API_KEY;
 const OPENROUTER_API_URL = "https://openrouter.ai/api/v1/chat/completions";
-
-// Use :online suffix to enable web search
 const MODEL = "google/gemini-3-flash-preview:online";
 
 const TRIAGE_PROMPT_WITH_SEARCH = `Du bist ein erfahrener VC-Analyst bei Mätch VC (Stuttgart). Mätch investiert ausschließlich in:
@@ -191,7 +189,7 @@ async function triageWithWebSearch(
       Authorization: `Bearer ${apiKey}`,
       "Content-Type": "application/json",
       "HTTP-Referer": "https://maxfor-match.vercel.app",
-      "X-Title": "Max for Mätch - Web Search Test",
+      "X-Title": "Max for Mätch - Web Search",
     },
     body: JSON.stringify({
       model: MODEL,
@@ -208,9 +206,6 @@ async function triageWithWebSearch(
 
   const data = await response.json();
   const content = data.choices[0].message.content.trim();
-
-  // Log the raw response for debugging
-  console.log("\n  Raw response:", content.substring(0, 200) + "...");
 
   // Extract JSON from response
   const jsonMatch = content.match(/\{[\s\S]*\}/);
@@ -236,56 +231,94 @@ async function main() {
   const cachePath = "/Users/maxhenkes/Desktop/Programms/MaxforMätch/data/cache.json";
   const data: CacheData = JSON.parse(fs.readFileSync(cachePath, "utf-8"));
 
-  // Pick 5 companies: 2 green, 2 unclear, 1 red for comparison
-  const greenCompanies = data.startups.filter(s => s.triage === "green").slice(0, 2);
-  const unclearCompanies = data.startups.filter(s => s.triage === "unclear").slice(0, 2);
-  const redCompanies = data.startups.filter(s => s.triage === "red").slice(0, 1);
+  console.log(`\nStarting web search triage for ${data.startups.length} companies...\n`);
+  console.log("Estimated cost: ~$5.60\n");
+  console.log("=".repeat(70));
 
-  const testCompanies = [...greenCompanies, ...unclearCompanies, ...redCompanies];
+  let processed = 0;
+  let changed = 0;
+  let errors = 0;
 
-  console.log("Testing web search on 5 companies...\n");
-  console.log("=" .repeat(70));
+  const oldStats = { ...data.stats };
 
-  for (const company of testCompanies) {
-    console.log(`\n📍 ${company.name} (${company.city})`);
-    console.log(`   Current triage: ${company.triage === "green" ? "🟢" : company.triage === "unclear" ? "🟡" : "🔴"} ${company.triage}`);
-    console.log(`   Purpose: ${company.businessPurpose.substring(0, 100)}...`);
+  for (const startup of data.startups) {
+    processed++;
+    const oldTriage = startup.triage;
+
+    process.stdout.write(`[${processed}/${data.startups.length}] ${startup.name.substring(0, 40).padEnd(40)} `);
 
     try {
       const result = await triageWithWebSearch(
         {
-          name: company.name,
-          city: company.city,
-          businessPurpose: company.businessPurpose,
+          name: startup.name,
+          city: startup.city,
+          businessPurpose: startup.businessPurpose,
         },
         OPENROUTER_API_KEY
       );
 
-      const newEmoji = result.triage === "green" ? "🟢" : result.triage === "unclear" ? "🟡" : "🔴";
-      console.log(`\n   NEW triage: ${newEmoji} ${result.triage}`);
-      console.log(`   Web findings: ${result.webFindings}`);
-      console.log(`   Flags:`);
-      for (const flag of result.flags) {
-        const flagEmoji = flag.type === "green" ? "  ✅" : flag.type === "red" ? "  ❌" : "  ⚠️";
-        console.log(`${flagEmoji} ${flag.text}`);
+      // Update startup data
+      startup.triage = result.triage;
+      startup.flags = result.flags;
+      (startup as any).webFindings = result.webFindings;
+      startup.lastUpdated = new Date().toISOString();
+
+      const emoji = result.triage === "green" ? "🟢" : result.triage === "unclear" ? "🟡" : "🔴";
+
+      if (result.triage !== oldTriage) {
+        changed++;
+        const oldEmoji = oldTriage === "green" ? "🟢" : oldTriage === "unclear" ? "🟡" : "🔴";
+        console.log(`${oldEmoji}→${emoji} CHANGED`);
+      } else {
+        console.log(`${emoji}`);
       }
 
-      // Check if triage changed
-      if (result.triage !== company.triage) {
-        console.log(`\n   ⚡ TRIAGE CHANGED: ${company.triage} → ${result.triage}`);
+      // Save every 10 companies
+      if (processed % 10 === 0) {
+        // Recalculate stats
+        data.stats = {
+          green: data.startups.filter(s => s.triage === "green").length,
+          unclear: data.startups.filter(s => s.triage === "unclear").length,
+          red: data.startups.filter(s => s.triage === "red").length,
+        };
+        data.lastUpdated = new Date().toISOString();
+        fs.writeFileSync(cachePath, JSON.stringify(data, null, 2));
+        console.log(`   [Saved checkpoint at ${processed}]`);
       }
+
+      // Rate limit - 800ms between requests
+      await new Promise(r => setTimeout(r, 800));
 
     } catch (error) {
-      console.log(`   ❌ Error: ${error}`);
+      errors++;
+      console.log(`❌ Error: ${(error as Error).message.substring(0, 50)}`);
+
+      // Mark as unclear on error
+      startup.triage = "unclear";
+      startup.flags = [{ type: "yellow", text: "Web-Analyse fehlgeschlagen" }];
+
+      // Wait longer on error (might be rate limit)
+      await new Promise(r => setTimeout(r, 2000));
     }
-
-    console.log("\n" + "-".repeat(70));
-
-    // Rate limit
-    await new Promise(r => setTimeout(r, 1000));
   }
 
-  console.log("\n✅ Test complete!");
+  // Final save
+  data.stats = {
+    green: data.startups.filter(s => s.triage === "green").length,
+    unclear: data.startups.filter(s => s.triage === "unclear").length,
+    red: data.startups.filter(s => s.triage === "red").length,
+  };
+  data.lastUpdated = new Date().toISOString();
+  fs.writeFileSync(cachePath, JSON.stringify(data, null, 2));
+
+  console.log("\n" + "=".repeat(70));
+  console.log("\nDone!");
+  console.log(`Processed: ${processed}`);
+  console.log(`Changed: ${changed}`);
+  console.log(`Errors: ${errors}`);
+  console.log("\nOld stats:", oldStats);
+  console.log("New stats:", data.stats);
+  console.log("\nCache saved to:", cachePath);
 }
 
 main().catch(console.error);
