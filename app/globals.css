@@ -83,17 +83,6 @@ input:focus {
   animation: pulse-glow 2s ease-in-out infinite;
 }
 
-.info-popup-collapsed::before {
-  content: '';
-  position: absolute;
-  inset: -2px;
-  border-radius: 10px;
-  background: linear-gradient(90deg, #3b82f6, #8b5cf6, #ec4899, #3b82f6);
-  background-size: 300% 300%;
-  animation: gradient-border 3s ease infinite;
-  z-index: -1;
-}
-
 @keyframes bounce-envelope {
   0%, 100% {
     transform: translateY(0);
