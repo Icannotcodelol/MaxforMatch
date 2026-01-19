@@ -33,7 +33,7 @@ export default function Home() {
   }, []);
 
   const filteredStartups = useMemo(() => {
-    return startups.filter((startup) => {
+    const filtered = startups.filter((startup) => {
       // Triage filter
       if (filters.triageFilter !== "all" && startup.triage !== filters.triageFilter) {
         return false;
@@ -67,6 +67,17 @@ export default function Home() {
 
       return true;
     });
+
+    // Apply sorting
+    if (filters.sortBy === "newest") {
+      return [...filtered].sort((a, b) => {
+        const dateA = new Date(a.registrationDate).getTime();
+        const dateB = new Date(b.registrationDate).getTime();
+        return dateB - dateA; // Newest first
+      });
+    }
+
+    return filtered;
   }, [startups, filters]);
 
   if (loading) {

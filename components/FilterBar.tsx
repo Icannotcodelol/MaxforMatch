@@ -1,6 +1,6 @@
 "use client";
 
-import type { FilterState, TriageCategory } from "@/lib/types";
+import type { FilterState, TriageCategory, SortOption } from "@/lib/types";
 
 interface FilterBarProps {
   filters: FilterState;
@@ -33,9 +33,15 @@ export function FilterBar({
     { value: "red", label: "Unwahrscheinlich", count: stats.red, emoji: "🔴" },
   ];
 
+  const sortOptions: { value: SortOption; label: string }[] = [
+    { value: "default", label: "Standard" },
+    { value: "newest", label: "Nach Neusten" },
+  ];
+
   const hasActiveFilters =
     filters.search ||
-    filters.triageFilter !== "all";
+    filters.triageFilter !== "all" ||
+    filters.sortBy !== "default";
 
   return (
     <div className="space-y-3 mb-6">
@@ -50,26 +56,48 @@ export function FilterBar({
                    focus:border-neutral-400 focus:outline-none transition-colors"
       />
 
-      {/* Triage-Tabs */}
-      <div className="flex gap-2 flex-wrap">
-        {triageOptions.map((option) => (
-          <button
-            key={option.value}
-            onClick={() => onChange({ ...filters, triageFilter: option.value })}
-            className={`
-              h-9 px-4 rounded-md text-sm font-medium transition-all
-              ${
-                filters.triageFilter === option.value
-                  ? "bg-neutral-900 text-white"
-                  : "bg-neutral-100 text-neutral-600 hover:bg-neutral-200"
-              }
-            `}
-          >
-            {option.emoji && <span className="mr-1.5">{option.emoji}</span>}
-            {option.label}
-            <span className="ml-1.5 opacity-60">({option.count})</span>
-          </button>
-        ))}
+      {/* Triage-Tabs und Sortierung */}
+      <div className="flex gap-2 flex-wrap items-center justify-between">
+        <div className="flex gap-2 flex-wrap">
+          {triageOptions.map((option) => (
+            <button
+              key={option.value}
+              onClick={() => onChange({ ...filters, triageFilter: option.value })}
+              className={`
+                h-9 px-4 rounded-md text-sm font-medium transition-all
+                ${
+                  filters.triageFilter === option.value
+                    ? "bg-neutral-900 text-white"
+                    : "bg-neutral-100 text-neutral-600 hover:bg-neutral-200"
+                }
+              `}
+            >
+              {option.emoji && <span className="mr-1.5">{option.emoji}</span>}
+              {option.label}
+              <span className="ml-1.5 opacity-60">({option.count})</span>
+            </button>
+          ))}
+        </div>
+
+        {/* Sortierung */}
+        <div className="flex gap-1">
+          {sortOptions.map((option) => (
+            <button
+              key={option.value}
+              onClick={() => onChange({ ...filters, sortBy: option.value })}
+              className={`
+                h-9 px-3 rounded-md text-sm font-medium transition-all
+                ${
+                  filters.sortBy === option.value
+                    ? "bg-neutral-900 text-white"
+                    : "bg-neutral-100 text-neutral-600 hover:bg-neutral-200"
+                }
+              `}
+            >
+              {option.label}
+            </button>
+          ))}
+        </div>
       </div>
 
       {/* Anzahl */}
@@ -86,6 +114,7 @@ export function FilterBar({
                 showOnlyWithGreenFlags: false,
                 universityOnly: false,
                 existOnly: false,
+                sortBy: "default",
               })
             }
             className="hover:text-neutral-600"

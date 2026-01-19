@@ -35,12 +35,15 @@ export interface Startup {
   lastUpdated: string;
 }
 
+export type SortOption = "default" | "newest";
+
 export interface FilterState {
   search: string;
   triageFilter: TriageCategory | "all";
   showOnlyWithGreenFlags: boolean;
   universityOnly: boolean;
   existOnly: boolean;
+  sortBy: SortOption;
 }
 
 export const DEFAULT_FILTERS: FilterState = {
@@ -49,6 +52,7 @@ export const DEFAULT_FILTERS: FilterState = {
   showOnlyWithGreenFlags: false,
   universityOnly: false,
   existOnly: false,
+  sortBy: "default",
 };
 
 export interface CacheData {
